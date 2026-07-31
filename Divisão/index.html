@@ -52,37 +52,38 @@
 
         }
 
-        .esquerda{
-                    width: 45%;
-                    float: left;
-                    height: 100px;
-                    background-color: blueviolet;
-                    margin: auto;
-                }
-
-        .direita{
-                width: 45%;
-                float: right;
-                background-color: chocolate;
-                height: 100px;
-                margin: auto;
+        .esquerda {
+    width: 48%; /* Ajustado para ocupar melhor o espaço */
+    height: 100px;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: left;
 }
 
+.direita {
+    width: 48%; /* Ajustado para manter a simetria */
+    background-color: chocolate;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
 
-        .rodape{
-            background-color: darkgreen;
-            color: white;
-            margin: auto;
-            height: 100px;
-            width: 90%;
-            display: flex;
-            justify-content: center;
-        }
-        .matriz{
-            width: 90%;
-            height: auto;
-            margin-bottom: 10px;
-        }
+/* Ajuste no rodapé para limpar o fluxo do layout antigo */
+.rodape {
+    background-color: darkgreen;
+    color: white;
+    margin: auto;
+    height: 100px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza o texto verticalmente */
+    clear: both; /* Garante que o rodapé fique sempre abaixo */
+}
 
 
 </style>
