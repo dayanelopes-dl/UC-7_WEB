@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pratica Avaliativa_30/07</title>
+
+<style>
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.estrutura_principal{
+    display:grid;
+    grid-template-columns:1fr 2fr 2fr;
+    gap:10px;
+    width:90%;
+    margin:30px auto;
+    padding:40px;
+    background:gray;
+    border:1px solid #000;
+}
+.titulo{
+    grid-column:1 / 4;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    font-weight:bold;
+    color:white;
+}
+.topo{
+    grid-column:1 / 4;
+    height:90px;
+    background:rgb(97, 210, 255);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:300px;
+}
+.publicidade{
+    grid-column:1; /* linha do layout*/
+    grid-row:3 / 5; /* tamanho verticval de um item dentro  do layout*/
+    min-height:100px;
+    background:rgb(255, 76, 76);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.areaprincipal{
+    grid-column:2 / 4;
+    min-height:220px;
+    background:rgb(97, 255, 97);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.areanoticias{
+    grid-column:2;
+    height:180px;
+    background:rgb(255, 255, 97);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.conteudo{
+    grid-column:3;
+    height:180px;
+    background:rgb(238, 139, 27);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.siterodape{
+    grid-column:1 / 4;
+    height:100px;
+    background:rgb(168, 97, 255);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+</style>
+
+</head>
+<body>
+
+<div class="estrutura_principal">
+    <div class="titulo">
+        Prática Avaliativa
+    </div>
+    <div class="topo">
+        <div class="menu">
+            <div>Home</div>
+            <div>Galeria</div>
+            <div>Blog</div>
+            <div>Contato</div>
+         </div>
+    </div>
+    <div class="publicidade">
+        Publicidade
+    </div>
+    <div class="areaprincipal">
+        Área Principal
+    </div>
+    <div class="areanoticias">
+        Área Notícias
+    </div>
+    <div class="conteudo">
+        Conteúdo
+    </div>
+    <div class="siterodape">
+        Rodapé
+    </div>
+</div>
+</body>
+</html>
