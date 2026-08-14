@@ -1,224 +1,636 @@
-```
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Inteligência Artificial no Mercado de Trabalho</title>
 
     <link rel="stylesheet" href="style.css">
-</head>
-<style>
-     .rodapeia{
-      grid-column: 1 / 4;
-    height: 150px;
-    margin-top: 50px;
-    border-radius: 15px;
-  }
-  .rodapeia p {
-    color: antiquewhite;
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-    .texto-conteudo h1{ font-size: 50px;
-     margin-bottom: 20px; 
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     color: whitesmoke
-    }
-    .texto-conteudo h2{
-    font-size: 50px;
-     margin-bottom: 20px; 
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     color: whitesmoke
-        
-    }
 
-  .texto-conteudo p{ font-size: 30px;
-     line-height: 1.6;
-     color:white 
-    }
-</style>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#222c44;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+
+     
+
+        .estrutura_principal{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:20px;
+            width:90%;
+            margin:30px auto;
+            padding:30px;
+        }
+
+
+        
+
+        .cabecalho1{
+            grid-column:1 / 4;
+            height:120px;
+            display:flex;
+            align-items:center;
+            background:#0F172A;
+            border-radius:10px;
+        }
+.logo{
+    height: 110px;
+    width: 200px;
+    display: flex;
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center;
+    overflow: hidden;
+    transform: translateX(30%);
+
+}
+.logo img{
+        display: block;
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+}
+
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            gap: 40px;
+            background: #0F172A;
+            padding: 15px; 
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+                }
+
+        .menu a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+        }
+
+        .menu a:hover{
+            color:#60A5FA;
+        }
+
+       .informacoes{
+      color: white;
+      margin-left: auto;
+      text-align: center;
+      padding-top: 5px;
+      padding-left: 100px;
+      transform: translateX(-20%);
+}
+
+        .redes{
+            display:flex;
+            flex-direction:row;
+            gap:15px;
+            align-items:center;
+        }
+
+        .redes img{
+        display: block;
+        object-fit: cover;
+        opacity: 0.75;
+        height: 30px;
+        width: 30px;
+        transform: translateX(-30%)
+        }
+
+        
+
+        .inicio{
+            grid-column:1 / 4;
+
+            display:flex;
+            align-items:center;
+
+            gap:40px;
+
+            min-height:360px;
+
+            padding:30px;
+
+            background:#0F172A;
+
+            border-radius:15px;
+            margin-bottom: 30px;
+        }
+
+
+      
+
+        .image-conteudo{
+            width:42%;
+            height:300px;
+
+            flex-shrink:0;
+
+            overflow:hidden;
+
+            border-radius:15px;
+        }
+
+        .image-conteudo img{
+            width:100%;
+            height:100%;
+
+            object-fit:cover;
+            object-position:center;
+
+            display:block;
+
+            transition:transform 0.3s ease;
+        }
+
+        .image-conteudo:hover img{
+            transform:scale(1.10);
+        }
+
+
+    
+
+        .texto-conteudo{
+            flex:1;
+
+            padding:20px;
+        }
+
+        .texto-conteudo h1{
+            font-size:35px;
+            line-height:1.2;
+
+            margin:0 0 20px 0;
+
+            font-family:'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
+            color:whitesmoke;
+        }
+
+        .texto-conteudo h2{
+            font-size:32px;
+            line-height:1.2;
+
+            margin:0 0 20px 0;
+
+            font-family:'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
+            color:whitesmoke;
+        }
+
+        .texto-conteudo p{
+            font-size:19px;
+            line-height:1.6;
+
+            color:white;
+
+            margin:0;
+
+            text-align:left;
+        }
+
+
+    
+
+        .rodapeia{
+            grid-column:1 / 4;
+
+            min-height:150px;
+
+            background:#0F172A;
+
+            margin-top:30px;
+
+            border-radius:15px;
+
+            padding:20px;
+        }
+
+        .rodapeia p{
+            color:antiquewhite;
+
+            text-align:center;
+
+            margin:10px 0;
+        }
+
+
+    
+
+        @media(max-width:768px){
+
+            .estrutura_principal{
+                width:94%;
+
+                grid-template-columns:1fr;
+
+                padding:15px;
+            }
+
+            .cabecalho1{
+                grid-column:1;
+
+                height:auto;
+
+                min-height:120px;
+
+                flex-wrap:wrap;
+            }
+
+            .inicio{
+                grid-column:1;
+
+                flex-direction:column;
+
+                gap:20px;
+
+                padding:20px;
+            }
+
+            .image-conteudo{
+                width:100%;
+
+                height:250px;
+            }
+
+            .texto-conteudo{
+                width:100%;
+
+                padding:10px;
+            }
+
+            .texto-conteudo h1{
+                font-size:30px;
+            }
+
+            .texto-conteudo h2{
+                font-size:27px;
+            }
+
+            .texto-conteudo p{
+                font-size:18px;
+            }
+
+            .rodapeia{
+                grid-column:1;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
 <body>
 
-    <div class="estrutura">
 
-        <div class="grade">
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/arte-digital-de-fundo-de-tecnologia-ai_23-2151719587.avif" alt="Inteligência Artificial">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h1>Inteligência Artificial no Mercado de Trabalho</h1>
-
-                    <p>
-                        A Inteligência Artificial está transformando o mercado
-                        de trabalho e mudando a forma como as empresas realizam
-                        suas atividades. Essa tecnologia pode auxiliar
-                        profissionais, automatizar tarefas e criar novas
-                        oportunidades de trabalho.
-                    </p>
-                </div>
-
-            </div>
+<div class="estrutura_principal">
 
 
-            <div class="inicio">
+    
 
-                <div class="image-conteudo">
-                    <img src="imagens/Conceitos-Basicos.webp" alt="Conceito de Inteligência Artificial">
-                </div>
+    <div class="cabecalho1">
 
-                <div class="texto-conteudo">
-                    <h2>Conceito de Inteligência Artificial</h2>
+        <div class="logo">
 
-                    <p>
-                        A Inteligência Artificial é uma área da tecnologia que
-                        permite que máquinas e sistemas realizem tarefas que
-                        normalmente exigiriam inteligência humana, como aprender,
-                        analisar informações, reconhecer padrões e tomar
-                        decisões.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/IA-1.webp" alt="IA no mercado de trabalho">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h2>IA no Mercado de Trabalho</h2>
-
-                    <p>
-                        A utilização da Inteligência Artificial está crescendo
-                        em diversas empresas. Sistemas inteligentes podem
-                        auxiliar no atendimento ao cliente, análise de dados,
-                        criação de conteúdos, programação e automação de
-                        processos.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/impacto.jpg" alt="Impactos da Inteligência Artificial">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h2>Impactos da IA nas Profissões</h2>
-
-                    <p>
-                        A Inteligência Artificial pode modificar algumas
-                        atividades profissionais ao automatizar tarefas
-                        repetitivas. Ao mesmo tempo, novas funções podem surgir,
-                        exigindo que os profissionais desenvolvam conhecimentos
-                        tecnológicos e novas habilidades.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/utiliza.jpeg" alt="Áreas que utilizam Inteligência Artificial">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h2>Principais Áreas que Utilizam IA</h2>
-
-                    <p>
-                        A Inteligência Artificial está presente em áreas como
-                        tecnologia, saúde, educação, indústria, comércio,
-                        marketing, finanças e atendimento ao cliente. Seu uso
-                        permite automatizar processos e auxiliar na tomada
-                        de decisões.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/beneficio.jpg" alt="Benefícios e desafios da IA">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h2>Benefícios e Desafios</h2>
-
-                    <p>
-                        Entre os benefícios da Inteligência Artificial estão
-                        o aumento da produtividade, a automação de tarefas e
-                        o auxílio na análise de informações. Porém, também
-                        existem desafios, como a necessidade de qualificação
-                        profissional e adaptação às novas tecnologias.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/futuro.webp" alt="Profissional do futuro">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h2>O Profissional do Futuro</h2>
-
-                    <p>
-                        O profissional do futuro precisará estar preparado para
-                        trabalhar junto com novas tecnologias. Buscar
-                        conhecimento, desenvolver habilidades digitais e
-                        aprender continuamente serão atitudes importantes
-                        para acompanhar as mudanças do mercado de trabalho.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="inicio">
-
-                <div class="image-conteudo">
-                    <img src="imagens/conclusao.png" alt="Conclusão sobre Inteligência Artificial">
-                </div>
-
-                <div class="texto-conteudo">
-                    <h2>Conclusão</h2>
-
-                    <p>
-                        A Inteligência Artificial está mudando o mercado de
-                        trabalho e criando novas possibilidades. Em vez de
-                        apenas substituir tarefas, a tecnologia também pode
-                        ajudar profissionais a aumentar sua produtividade e
-                        desenvolver novas formas de trabalhar. Por isso,
-                        estar preparado para aprender e acompanhar as
-                        mudanças tecnológicas é cada vez mais importante.
-                    </p>
-                </div>
-
-            </div>
+            <img src="imagens/logos.png"
+                 alt="Logo do site">
 
         </div>
-                
-<div class="rodapeia">   
+
+
+        <div class="menu">
+
+            <a href="index.html">Início</a>
+
+            <a href="ia.html">I.A</a>
+
+            <a href="desenvolvedor.html">
+                Desenvolvedor
+            </a>
+
+            <a href="seguranca.html">
+                Segurança
+            </a>
+
+        </div>
+
+
+        <div class="informacoes">
+
+            <p style="font-size:11px;">
+                Telefone: (67) 99999-9999
+            </p>
+
+            <p style="font-size:12px;">
+                Site: www.sysflux.com
+            </p>
+
+        </div>
+
+
+        <div class="redes">
+
+            <img src="imagens/facebook-logo-.webp"
+                 alt="Facebook">
+
+            <img src="imagens/instagram-logo-instagram-icon-transparent-free-png.webp"
+                 alt="Instagram">
+
+            <img src="imagens/whatsapp.png"
+                 alt="Imagem 3">
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/arte-digital-de-fundo-de-tecnologia-ai_23-2151719587.avif"
+                 alt="Inteligência Artificial">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h1>
+                Inteligência Artificial no Mercado de Trabalho
+            </h1>
+
+            <p>
+                A Inteligência Artificial está transformando o mercado
+                de trabalho e mudando a forma como as empresas realizam
+                suas atividades. Essa tecnologia pode auxiliar
+                profissionais, automatizar tarefas e criar novas
+                oportunidades de trabalho.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/Conceitos-Basicos.webp"
+                 alt="Conceito de Inteligência Artificial">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                Conceito de Inteligência Artificial
+            </h2>
+
+            <p>
+                A Inteligência Artificial é uma área da tecnologia que
+                permite que máquinas e sistemas realizem tarefas que
+                normalmente exigiriam inteligência humana, como aprender,
+                analisar informações, reconhecer padrões e tomar
+                decisões.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+   
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/IA-1.webp"
+                 alt="IA no mercado de trabalho">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                IA no Mercado de Trabalho
+            </h2>
+
+            <p>
+                A utilização da Inteligência Artificial está crescendo
+                em diversas empresas. Sistemas inteligentes podem
+                auxiliar no atendimento ao cliente, análise de dados,
+                criação de conteúdos, programação e automação de
+                processos.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/impacto.jpg"
+                 alt="Impactos da Inteligência Artificial">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                Impactos da IA nas Profissões
+            </h2>
+
+            <p>
+                A Inteligência Artificial pode modificar algumas
+                atividades profissionais ao automatizar tarefas
+                repetitivas. Ao mesmo tempo, novas funções podem surgir,
+                exigindo que os profissionais desenvolvam conhecimentos
+                tecnológicos e novas habilidades.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/utiliza.jpeg"
+                 alt="Áreas que utilizam Inteligência Artificial">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                Principais Áreas que Utilizam IA
+            </h2>
+
+            <p>
+                A Inteligência Artificial está presente em áreas como
+                tecnologia, saúde, educação, indústria, comércio,
+                marketing, finanças e atendimento ao cliente. Seu uso
+                permite automatizar processos e auxiliar na tomada
+                de decisões.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+ 
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/beneficio.jpg"
+                 alt="Benefícios e desafios da IA">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                Benefícios e Desafios
+            </h2>
+
+            <p>
+                Entre os benefícios da Inteligência Artificial estão
+                o aumento da produtividade, a automação de tarefas e
+                o auxílio na análise de informações. Porém, também
+                existem desafios, como a necessidade de qualificação
+                profissional e adaptação às novas tecnologias.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/futuro.webp"
+                 alt="Profissional do futuro">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                O Profissional do Futuro
+            </h2>
+
+            <p>
+                O profissional do futuro precisará estar preparado para
+                trabalhar junto com novas tecnologias. Buscar
+                conhecimento, desenvolver habilidades digitais e
+                aprender continuamente serão atitudes importantes
+                para acompanhar as mudanças do mercado de trabalho.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+   
+
+    <div class="inicio">
+
+        <div class="image-conteudo">
+
+            <img src="imagens/conclusao.png"
+                 alt="Conclusão sobre Inteligência Artificial">
+
+        </div>
+
+
+        <div class="texto-conteudo">
+
+            <h2>
+                Conclusão
+            </h2>
+
+            <p>
+                A Inteligência Artificial está mudando o mercado de
+                trabalho e criando novas possibilidades. Em vez de
+                apenas substituir tarefas, a tecnologia também pode
+                ajudar profissionais a aumentar sua produtividade e
+                desenvolver novas formas de trabalhar. Por isso,
+                estar preparado para aprender e acompanhar as
+                mudanças tecnológicas é cada vez mais importante.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+    <div class="rodapeia">
 
         <p>Sys Flux</p>
 
@@ -228,12 +640,12 @@
 
         <p>(67) 99999-9999</p>
 
+    </div>
+
 
 </div>
 
-    </div>
 
 </body>
 
 </html>
-```

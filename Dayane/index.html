@@ -10,6 +10,409 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#222c44;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.estrutura_principal{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    width:90%;
+    margin:30px auto;
+    padding:30px;
+    box-shadow: black;
+
+}
+
+
+.quadrado1 ,
+.quadrado2 ,
+.quadrado3 {
+    width: 100%;
+    height: 180px;
+
+}
+.quadrado1 a,
+.quadrado2 a,
+.quadrado3 a{
+    height: 100%;
+    background-image: linear-gradient(#0F172A, #0066FF,#0F172A);
+    opacity: 0.75;
+    display: flex;
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center;
+    border-radius: 15px;
+    text-decoration: none;
+    flex-direction: column;
+}
+.quadrado1 p,
+.quadrado2 p,
+.quadrado3 p{
+    margin: 10px 0 0 0;
+    color: white;
+    font-size: 16px;
+}
+.quadrado1 img{
+    width: 120px;
+    height:auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+}
+
+
+.quadrado2 img{
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+
+}
+
+
+.quadrado3 img{
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.quadrado1:hover img,
+.quadrado2:hover img,
+.quadrado3:hover img{
+    transform: scale(1.10);
+}
+
+.conteudo{ grid-column: 1 / 4;
+     height: 700px; 
+     background: #0F172A;
+     border-radius: 15px;
+
+     } 
+.inicio{ display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+    height: 100%; 
+    padding: 30px 80px; } 
+
+.image-conteudo{ width: 50%;
+ }
+ .image-conteudo img{ width: 100%;
+     height: 400px; 
+     object-fit: cover; 
+     border-radius: 10px; }
+     .image-conteudo:hover img{
+        transform: scale(1.10)
+     }
+
+ .texto-conteudo{ width: 50%;
+     text-align: left;
+      transform: translateX(-2%);
+     }
+  .texto-conteudo h1{ font-size: 45px;
+     margin-bottom: 20px; 
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: whitesmoke
+    }
+
+  .texto-conteudo p{ font-size: 25px;
+     line-height: 1.6;
+     color:white 
+    }
+     
+
+.cabecalho{
+    grid-column: 1 / 4;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    background:#0F172A;
+    border-radius: 10px;
+}
+.logo{
+    height: 110px;
+    width: 200px;
+    display: flex;
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center;
+    overflow: hidden;
+    transform: translateX(30%);
+
+}
+.logo img{
+        display: block;
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+.redes img{
+        display: block;
+        object-fit: cover;
+        height: 30px;
+        width: 30px;
+        transform: translateX(-30%)
+
+}
+.informacoes{
+      color: white;
+      margin-left: auto;
+      text-align: center;
+      padding-top: 5px;
+      padding-left: 100px;
+      transform: translateX(-20%);
+}
+
+  .rodape{
+      grid-column: 1 / 4;
+    height: 150px;
+    background: #0F172A;
+    margin-top: 50px;
+    border-radius: 15px;
+  }
+  .rodape p {
+    color: antiquewhite;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+
+  }
+  .menu{ 
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+     gap: 40px;
+     padding: 15px; 
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+
+    } 
+
+  .menu a{ color: white;
+     text-decoration: none;
+      font-size: 17px; } 
+
+  .menu a:hover{ 
+    color: #60A5FA;
+ }
+
+
+ 
+ @media(max-width:768px){
+    .estrutura_principal{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    width:85%;
+    margin:30px auto;
+    padding:30px;
+    box-shadow: black;
+
+}
+
+
+.quadrado1 ,
+.quadrado2 ,
+.quadrado3 {
+    width: 100%;
+    height: 180px;
+
+}
+.quadrado1 a,
+.quadrado2 a,
+.quadrado3 a{
+    height: 100%;
+    background:#0066FF;
+    opacity: 0.75;
+    display: flex;
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center;
+    border-radius: 15px;
+    text-decoration: none;
+    flex-direction: column;
+}
+.quadrado1 p,
+.quadrado2 p,
+.quadrado3 p{
+    margin: 10px 0 0 0;
+    color: white;
+    font-size: 16px;
+}
+.quadrado1 img{
+    width: 120px;
+    height:auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+}
+
+
+.quadrado2 img{
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+
+}
+
+
+.quadrado3 img{
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.quadrado1:hover img,
+.quadrado2:hover img,
+.quadrado3:hover img{
+    transform: scale(1.10);
+}
+
+.conteudo{ grid-column: 1 / 4;
+     height: 700px; 
+     background: #0F172A;
+     border-radius: 15px;
+
+     } 
+.inicio{ display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+    height: 100%; 
+    padding: 30px 80px; } 
+
+.image-conteudo{ width: 50%;
+ }
+ .image-conteudo img{ width: 100%;
+     height: 400px; 
+     object-fit: cover; 
+     border-radius: 10px; }
+     .image-conteudo:hover img{
+        transform: scale(1.10)
+     }
+
+ .texto-conteudo{ width: 50%;
+     text-align: left;
+      transform: translateX(-2%);
+     }
+  .texto-conteudo h1{ font-size: 45px;
+     margin-bottom: 20px; 
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: whitesmoke
+    }
+
+  .texto-conteudo p{ font-size: 25px;
+     line-height: 1.6;
+     color:white 
+    }
+     
+
+.cabecalho{
+    grid-column: 1 / 4;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    background:#0F172A;
+    border-radius: 10px;
+}
+.logo{
+    height: 110px;
+    width: 200px;
+    display: flex;
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center;
+    overflow: hidden;
+    transform: translateX(30%);
+
+}
+.logo img{
+        display: block;
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+.redes img{
+        display: block;
+        object-fit: cover;
+        height: 30px;
+        width: 30px;
+        transform: translateX(-30%)
+
+}
+.informacoes{
+      color: white;
+      margin-left: auto;
+      text-align: center;
+      padding-top: 5px;
+      padding-left: 100px;
+      transform: translateX(-20%);
+}
+
+  .rodape{
+      grid-column: 1 / 4;
+    height: 150px;
+    background: #0F172A;
+    margin-top: 50px;
+    border-radius: 15px;
+  }
+  .rodape p {
+    color: antiquewhite;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+
+  }
+  .menu{ 
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+     gap: 40px;
+     padding: 15px; 
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+
+    } 
+
+  .menu a{ color: white;
+     text-decoration: none;
+      font-size: 17px; } 
+
+  .menu a:hover{ 
+    color: #60A5FA;
+ }
+
+ }
+
+           
+</style>
 
 <body>
     <div class="estrutura_principal">
@@ -19,21 +422,23 @@
         <div class="logo">
             <img src="imagens/logos.png" alt="Logo do site">
         </div>
+        <div class="menu">
+         <a href="index.html">Início</a>
+          <a href="ia.html">I.A</a> 
+          <a href="desenvolvedor.html">Desenvolvedor</a>
+           <a href="seguranca.html">Segurança</a> </div>
+
               <div class="informacoes">
-            <p style="font-size: 11px;">Telefone:(67) 99999-9999 </p>
-            <p style="font-size: 12px;">Site: www.sysflux.com</p>
+            <p style="font-size: 11px;">Tel:+55(67)99999-9999 </p>
+            <p style="font-size: 12px;">Local: Corumbá - MS</p>
         </div>
 
         <div class="redes">
             <img src="imagens/facebook-logo-.webp" alt="Facebook">
             <img src="imagens/instagram-logo-instagram-icon-transparent-free-png.webp" alt="Imagem 2">
-            <img src="imagens/10000403-removebg-preview.png" alt="Imagem 3">
+            <img src="imagens/whatsapp.png" alt="Imagem 3">
         </div>
-        <div class="menu">
-         <a href="index.html">Início</a>
-          <a href="ia.html">Inteligência Artificial</a> 
-          <a href="desenvolvedor.html">Profissão Desenvolvedor</a>
-           <a href="seguranca.html">Segurança da Informação</a> </div>
+        
 
 
     </div>
@@ -41,19 +446,22 @@
 
     <div class="quadrado1">
     <a href="ia.html">
-       <img src="imagens/icone_inteligencia_artificial.png" alt="Imagem 1">
+       <img src="imagens/ia quadro.png" alt="Imagem 1">
+       <p>Inteligência Artificial</p>
     </a>
 </div>
 
 <div class="quadrado2">
     <a href="desenvolvedor.html">
-    <img src="imagens/icone_profissao_desenvolvedor.png" alt="Imagem 2">
+    <img src="imagens/developer quadro.png" alt="Imagem 2">
+    <p>Profissão Desenvolvedor</p>
 </a>
 </div>
 
 <div class="quadrado3">
     <a href="seguranca.html">
-    <img src="imagens/icone_seguranca_informacao.png" alt="Imagem 3">
+    <img src="imagens/seguranca quadro.png" alt="Imagem 3">
+    <p>Segurança da Informação</p>
 </a>
 </div>
 
@@ -69,12 +477,7 @@
         </div>
     </div>
     
-
-          
-
-          
-    
-        
+       
 <div class="rodape">   
 
         <p>Sys Flux</p>
