@@ -26,7 +26,7 @@
         }
 
 
-     
+        /* ESTRUTURA PRINCIPAL */
 
         .estrutura_principal{
             display:grid;
@@ -38,48 +38,72 @@
         }
 
 
-        
+        /* CABEÇALHO */
 
         .cabecalho1{
             grid-column:1 / 4;
             height:120px;
+
             display:flex;
             align-items:center;
+
             background:#0F172A;
+
             border-radius:10px;
         }
-.logo{
-    height: 110px;
-    width: 200px;
-    display: flex;
-    justify-content: center; /* centraliza na horizontal */
-    align-items: center;
-    overflow: hidden;
-    transform: translateX(30%);
 
-}
-.logo img{
-        display: block;
-        object-fit: cover;
-        height: 150px;
-        width: 150px;
-}
+
+        /* LOGO */
+
+        .logo{
+            height:110px;
+            width:200px;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            overflow:hidden;
+
+            transform:translateX(30%);
+        }
+
+        .logo img{
+            display:block;
+
+            object-fit:cover;
+
+            height:150px;
+            width:150px;
+        }
+
+
+        /* MENU */
 
         .menu{
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            gap: 40px;
-            background: #0F172A;
-            padding: 15px; 
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-                }
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            gap:40px;
+
+            background:#0F172A;
+
+            padding:15px;
+
+            position:absolute;
+
+            left:50%;
+
+            transform:translateX(-50%);
+        }
 
         .menu a{
             color:white;
+
             text-decoration:none;
+
             font-size:17px;
         }
 
@@ -87,37 +111,154 @@
             color:#60A5FA;
         }
 
-       .informacoes{
-      color: white;
-      margin-left: auto;
-      text-align: center;
-      padding-top: 5px;
-      padding-left: 100px;
-      transform: translateX(-20%);
-}
+
+        /* INFORMAÇÕES */
+
+        .informacoes{
+            color:white;
+
+            margin-left:auto;
+
+            text-align:center;
+
+            padding-top:5px;
+
+            padding-left:100px;
+
+            transform:translateX(-20%);
+        }
+
+
+        /* REDES SOCIAIS */
 
         .redes{
             display:flex;
+
             flex-direction:row;
+
             gap:15px;
+
             align-items:center;
         }
 
         .redes img{
-        display: block;
-        object-fit: cover;
-        opacity: 0.75;
-        height: 30px;
-        width: 30px;
-        transform: translateX(-30%)
+            display:block;
+
+            object-fit:cover;
+
+            opacity:0.75;
+
+            height:30px;
+            width:30px;
+
+            transform:translateX(-30%);
         }
 
-        
+
+        /* ================================= */
+        /* BLOCO SOBRE INTELIGÊNCIA ARTIFICIAL */
+        /* ================================= */
+
+        .sobre-ia{
+            grid-column:1 / 4;
+
+            background:#0F172A;
+
+            border-radius:15px;
+
+            padding:35px;
+
+            margin-bottom:30px;
+
+            width:100%;
+        }
+
+
+        .texto-sobre-ia{
+            width:100%;
+        }
+
+
+        /* IMAGEM CENTRALIZADA */
+
+        .imagem-sobre-ia{
+            width:60%;
+
+            height:300px;
+
+            margin:0 auto 30px auto;
+
+            overflow:hidden;
+
+            border-radius:15px;
+        }
+
+
+        .imagem-sobre-ia img{
+            width:100%;
+
+            height:100%;
+
+            object-fit:cover;
+
+            display:block;
+
+            transition:transform 0.3s ease;
+        }
+
+
+        /* EFEITO AO PASSAR O MOUSE */
+
+        .imagem-sobre-ia:hover img{
+            transform:scale(1.05);
+        }
+
+
+        /* TÍTULO */
+
+        .texto-sobre-ia h2{
+            font-size:32px;
+
+            line-height:1.2;
+
+            margin:0 0 20px 0;
+
+            font-family:'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
+            color:whitesmoke;
+
+            text-align:left;
+        }
+
+
+        /* TEXTO */
+
+        .texto-sobre-ia p{
+            font-size:19px;
+
+            line-height:1.7;
+
+            color:white;
+
+            margin:0;
+
+            text-align:justify;
+        }
+
+
+        /* ================================= */
+        /* BLOCOS DE CONTEÚDO */
+        /* ================================= */
 
         .inicio{
             grid-column:1 / 4;
 
             display:flex;
+
             align-items:center;
 
             gap:40px;
@@ -129,14 +270,16 @@
             background:#0F172A;
 
             border-radius:15px;
-            margin-bottom: 30px;
+
+            margin-bottom:30px;
         }
 
 
-      
+        /* IMAGENS DOS BLOCOS */
 
         .image-conteudo{
             width:42%;
+
             height:300px;
 
             flex-shrink:0;
@@ -146,11 +289,14 @@
             border-radius:15px;
         }
 
+
         .image-conteudo img{
             width:100%;
+
             height:100%;
 
             object-fit:cover;
+
             object-position:center;
 
             display:block;
@@ -158,12 +304,13 @@
             transition:transform 0.3s ease;
         }
 
+
         .image-conteudo:hover img{
             transform:scale(1.10);
         }
 
 
-    
+        /* TEXTO DOS BLOCOS */
 
         .texto-conteudo{
             flex:1;
@@ -171,8 +318,10 @@
             padding:20px;
         }
 
+
         .texto-conteudo h1{
             font-size:35px;
+
             line-height:1.2;
 
             margin:0 0 20px 0;
@@ -185,9 +334,11 @@
 
             color:whitesmoke;
         }
+
 
         .texto-conteudo h2{
             font-size:32px;
+
             line-height:1.2;
 
             margin:0 0 20px 0;
@@ -201,8 +352,10 @@
             color:whitesmoke;
         }
 
+
         .texto-conteudo p{
             font-size:19px;
+
             line-height:1.6;
 
             color:white;
@@ -213,7 +366,9 @@
         }
 
 
-    
+        /* ================================= */
+        /* RODAPÉ */
+        /* ================================= */
 
         .rodapeia{
             grid-column:1 / 4;
@@ -229,6 +384,7 @@
             padding:20px;
         }
 
+
         .rodapeia p{
             color:antiquewhite;
 
@@ -238,7 +394,9 @@
         }
 
 
-    
+        /* ================================= */
+        /* RESPONSIVIDADE */
+        /* ================================= */
 
         @media(max-width:768px){
 
@@ -250,6 +408,9 @@
                 padding:15px;
             }
 
+
+            /* CABEÇALHO */
+
             .cabecalho1{
                 grid-column:1;
 
@@ -259,6 +420,54 @@
 
                 flex-wrap:wrap;
             }
+
+
+            /* BLOCO SOBRE IA */
+
+            .sobre-ia{
+                grid-column:1;
+
+                padding:20px;
+            }
+
+
+            .texto-sobre-ia{
+                padding:5px;
+            }
+
+
+            /* IMAGEM NO CELULAR */
+
+            .imagem-sobre-ia{
+                width:100%;
+
+                height:220px;
+
+                margin-bottom:20px;
+            }
+
+
+            /* TÍTULO NO CELULAR */
+
+            .texto-sobre-ia h2{
+                font-size:27px;
+
+                margin-bottom:20px;
+            }
+
+
+            /* TEXTO NO CELULAR */
+
+            .texto-sobre-ia p{
+                font-size:18px;
+
+                line-height:1.6;
+
+                text-align:left;
+            }
+
+
+            /* BLOCOS */
 
             .inicio{
                 grid-column:1;
@@ -270,11 +479,13 @@
                 padding:20px;
             }
 
+
             .image-conteudo{
                 width:100%;
 
                 height:250px;
             }
+
 
             .texto-conteudo{
                 width:100%;
@@ -282,17 +493,23 @@
                 padding:10px;
             }
 
+
             .texto-conteudo h1{
                 font-size:30px;
             }
+
 
             .texto-conteudo h2{
                 font-size:27px;
             }
 
+
             .texto-conteudo p{
                 font-size:18px;
             }
+
+
+            /* RODAPÉ */
 
             .rodapeia{
                 grid-column:1;
@@ -311,9 +528,14 @@
 <div class="estrutura_principal">
 
 
-    
+    <!-- ============================== -->
+    <!-- CABEÇALHO -->
+    <!-- ============================== -->
 
     <div class="cabecalho1">
+
+
+        <!-- LOGO -->
 
         <div class="logo">
 
@@ -323,11 +545,17 @@
         </div>
 
 
+        <!-- MENU -->
+
         <div class="menu">
 
-            <a href="index.html">Início</a>
+            <a href="index.html">
+                Início
+            </a>
 
-            <a href="ia.html">I.A</a>
+            <a href="ia.html">
+                I.A
+            </a>
 
             <a href="desenvolvedor.html">
                 Desenvolvedor
@@ -339,6 +567,8 @@
 
         </div>
 
+
+        <!-- INFORMAÇÕES -->
 
         <div class="informacoes">
 
@@ -353,6 +583,8 @@
         </div>
 
 
+        <!-- REDES SOCIAIS -->
+
         <div class="redes">
 
             <img src="imagens/facebook-logo-.webp"
@@ -362,283 +594,76 @@
                  alt="Instagram">
 
             <img src="imagens/whatsapp.png"
-                 alt="Imagem 3">
+                 alt="WhatsApp">
 
         </div>
+
 
     </div>
 
 
+    <!-- ======================================= -->
+    <!-- SOBRE A INTELIGÊNCIA ARTIFICIAL -->
+    <!-- ======================================= -->
 
-    
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/arte-digital-de-fundo-de-tecnologia-ai_23-2151719587.avif"
-                 alt="Inteligência Artificial">
-
-        </div>
+    <div class="sobre-ia">
 
 
-        <div class="texto-conteudo">
-
-            <h1>
-                Inteligência Artificial no Mercado de Trabalho
-            </h1>
-
-            <p>
-                A Inteligência Artificial está transformando o mercado
-                de trabalho e mudando a forma como as empresas realizam
-                suas atividades. Essa tecnologia pode auxiliar
-                profissionais, automatizar tarefas e criar novas
-                oportunidades de trabalho.
-            </p>
-
-        </div>
-
-    </div>
+        <div class="texto-sobre-ia">
 
 
+            <!-- IMAGEM CENTRALIZADA -->
 
-    
+            <div class="imagem-sobre-ia">
 
-    <div class="inicio">
+                <img src="imagens/arte-digital-de-fundo-de-tecnologia-ai_23-2151719587.avif"
+                     alt="Inteligência Artificial">
 
-        <div class="image-conteudo">
-
-            <img src="imagens/Conceitos-Basicos.webp"
-                 alt="Conceito de Inteligência Artificial">
-
-        </div>
+            </div>
 
 
-        <div class="texto-conteudo">
+            <!-- TÍTULO -->
 
             <h2>
-                Conceito de Inteligência Artificial
+                Sobre a Inteligência Artificial
             </h2>
 
+
+            <!-- TEXTO -->
+
             <p>
-                A Inteligência Artificial é uma área da tecnologia que
-                permite que máquinas e sistemas realizem tarefas que
-                normalmente exigiriam inteligência humana, como aprender,
-                analisar informações, reconhecer padrões e tomar
-                decisões.
-            </p>
+                A Inteligência Artificial, conhecida também como IA, é uma área da tecnologia que busca desenvolver sistemas capazes de realizar atividades que normalmente exigiriam a inteligência humana. Esses sistemas conseguem analisar informações, reconhecer padrões, aprender com dados, compreender textos, identificar imagens e auxiliar na tomada de decisões. Atualmente, a Inteligência Artificial está presente em diversas situações do nosso cotidiano, mesmo quando muitas vezes não percebemos sua utilização. Ela pode ser encontrada em aplicativos de celular, mecanismos de pesquisa, redes sociais, plataformas de vídeos, sistemas de atendimento, ferramentas de tradução e diversos outros serviços tecnológicos. No mercado de trabalho, a IA vem ganhando cada vez mais espaço porque pode ajudar empresas e profissionais a realizar tarefas de maneira mais rápida e eficiente. Uma das principais características da Inteligência Artificial é sua capacidade de trabalhar com uma grande quantidade de informações em pouco tempo. Isso permite que sistemas inteligentes auxiliem profissionais na análise de dados e na identificação de possíveis soluções para determinados problemas. Em empresas, por exemplo, a IA pode ser utilizada para organizar informações, responder perguntas de clientes, automatizar tarefas repetitivas e auxiliar no planejamento de atividades. Na área da saúde, tecnologias baseadas em Inteligência Artificial podem auxiliar profissionais na análise de exames e informações médicas.</p>
+                <p>Na educação, ferramentas inteligentes podem ajudar estudantes e professores durante o processo de aprendizagem. Na indústria, a tecnologia pode ser utilizada para controlar máquinas, identificar falhas e melhorar os processos de produção. No comércio, sistemas inteligentes podem analisar o comportamento dos consumidores e auxiliar as empresas a oferecer produtos e serviços de acordo com suas necessidades. A Inteligência Artificial também está modificando diversas profissões, principalmente aquelas que possuem atividades repetitivas ou que envolvem o processamento de grandes quantidades de informações. Isso não significa necessariamente que todas essas profissões serão substituídas, pois em muitos casos a tecnologia funciona como uma ferramenta de apoio ao trabalhador. O profissional pode utilizar a IA para economizar tempo e concentrar seus esforços em atividades que exigem criatividade, comunicação, pensamento crítico e capacidade de resolver problemas. Ao mesmo tempo, o crescimento da Inteligência Artificial cria a necessidade de desenvolver novas habilidades profissionais. Pessoas que desejam acompanhar as mudanças do mercado precisam buscar conhecimentos tecnológicos e estar dispostas a aprender continuamente. A capacidade de utilizar ferramentas de Inteligência Artificial de maneira responsável pode se tornar cada vez mais importante em diferentes áreas profissionais. Além dos benefícios, a IA também apresenta desafios que precisam ser considerados.</p>
+                <p> Questões relacionadas à privacidade, segurança das informações, uso responsável dos dados e possíveis mudanças nas oportunidades de trabalho precisam receber atenção. Também é importante lembrar que os sistemas de Inteligência Artificial podem cometer erros e, por isso, suas respostas e decisões precisam ser analisadas por pessoas. Dessa forma, a utilização da tecnologia deve acontecer de maneira consciente e responsável. A Inteligência Artificial representa uma das principais transformações tecnológicas da atualidade e continuará influenciando a sociedade nos próximos anos. Seu desenvolvimento pode trazer novas oportunidades para empresas, trabalhadores e estudantes, mas também exige preparação para lidar com as mudanças. Mais do que simplesmente substituir atividades humanas, a IA pode atuar como uma ferramenta capaz de ampliar as capacidades dos profissionais e melhorar diferentes processos. Por isso, compreender o funcionamento e as possibilidades da Inteligência Artificial é cada vez mais importante para quem deseja estar preparado para o futuro da tecnologia e do mercado de trabalho.</p>
+
 
         </div>
+
 
     </div>
 
 
-
-   
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/IA-1.webp"
-                 alt="IA no mercado de trabalho">
-
-        </div>
-
-
-        <div class="texto-conteudo">
-
-            <h2>
-                IA no Mercado de Trabalho
-            </h2>
-
-            <p>
-                A utilização da Inteligência Artificial está crescendo
-                em diversas empresas. Sistemas inteligentes podem
-                auxiliar no atendimento ao cliente, análise de dados,
-                criação de conteúdos, programação e automação de
-                processos.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/impacto.jpg"
-                 alt="Impactos da Inteligência Artificial">
-
-        </div>
-
-
-        <div class="texto-conteudo">
-
-            <h2>
-                Impactos da IA nas Profissões
-            </h2>
-
-            <p>
-                A Inteligência Artificial pode modificar algumas
-                atividades profissionais ao automatizar tarefas
-                repetitivas. Ao mesmo tempo, novas funções podem surgir,
-                exigindo que os profissionais desenvolvam conhecimentos
-                tecnológicos e novas habilidades.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/utiliza.jpeg"
-                 alt="Áreas que utilizam Inteligência Artificial">
-
-        </div>
-
-
-        <div class="texto-conteudo">
-
-            <h2>
-                Principais Áreas que Utilizam IA
-            </h2>
-
-            <p>
-                A Inteligência Artificial está presente em áreas como
-                tecnologia, saúde, educação, indústria, comércio,
-                marketing, finanças e atendimento ao cliente. Seu uso
-                permite automatizar processos e auxiliar na tomada
-                de decisões.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
- 
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/beneficio.jpg"
-                 alt="Benefícios e desafios da IA">
-
-        </div>
-
-
-        <div class="texto-conteudo">
-
-            <h2>
-                Benefícios e Desafios
-            </h2>
-
-            <p>
-                Entre os benefícios da Inteligência Artificial estão
-                o aumento da produtividade, a automação de tarefas e
-                o auxílio na análise de informações. Porém, também
-                existem desafios, como a necessidade de qualificação
-                profissional e adaptação às novas tecnologias.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/futuro.webp"
-                 alt="Profissional do futuro">
-
-        </div>
-
-
-        <div class="texto-conteudo">
-
-            <h2>
-                O Profissional do Futuro
-            </h2>
-
-            <p>
-                O profissional do futuro precisará estar preparado para
-                trabalhar junto com novas tecnologias. Buscar
-                conhecimento, desenvolver habilidades digitais e
-                aprender continuamente serão atitudes importantes
-                para acompanhar as mudanças do mercado de trabalho.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-   
-
-    <div class="inicio">
-
-        <div class="image-conteudo">
-
-            <img src="imagens/conclusao.png"
-                 alt="Conclusão sobre Inteligência Artificial">
-
-        </div>
-
-
-        <div class="texto-conteudo">
-
-            <h2>
-                Conclusão
-            </h2>
-
-            <p>
-                A Inteligência Artificial está mudando o mercado de
-                trabalho e criando novas possibilidades. Em vez de
-                apenas substituir tarefas, a tecnologia também pode
-                ajudar profissionais a aumentar sua produtividade e
-                desenvolver novas formas de trabalhar. Por isso,
-                estar preparado para aprender e acompanhar as
-                mudanças tecnológicas é cada vez mais importante.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    
+    <!-- ======================================= -->
+    <!-- RODAPÉ -->
+    <!-- ======================================= -->
 
     <div class="rodapeia">
 
-        <p>Sys Flux</p>
+        <p>
+            Sys Flux
+        </p>
 
-        <p>Corumbá - MS</p>
+        <p>
+            Corumbá - MS
+        </p>
 
-        <p>contato@sysflux.com</p>
+        <p>
+            contato@sysflux.com
+        </p>
 
-        <p>(67) 99999-9999</p>
+        <p>
+            (67) 99999-9999
+        </p>
 
     </div>
 

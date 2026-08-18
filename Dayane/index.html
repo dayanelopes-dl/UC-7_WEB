@@ -3,495 +3,834 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Artigo - Inteligência Artificial</title>
+    <title>Artigo - Inteligência Artificial</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #222c44;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .estrutura_principal {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            width: 90%;
+            margin: 30px auto;
+            padding: 30px;
+        }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        .cabecalho {
+            grid-column: 1 / 4;
+            height: 120px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+
+            background: #0F172A;
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            height: 110px;
+            width: 200px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+
+            transform: translateX(30%);
+        }
+
+        .logo img {
+            display: block;
+            object-fit: cover;
+
+            height: 150px;
+            width: 150px;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 15px;
+
+            position: absolute;
+
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        /* ITEM DO MENU */
+
+        .menu-item {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 0 14px;
+
+            overflow: hidden;
+
+            border-radius: 999px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background: transparent;
+
+            transition:
+                width .45s cubic-bezier(.22, 1, .36, 1),
+                background .3s ease,
+                box-shadow .3s ease;
+        }
+
+
+        /* ÍCONE */
+
+        .menu-icon {
+            min-width: 24px;
+            width: 24px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 20px;
+        }
+
+
+        /* TEXTO DO MENU */
+
+        .menu-label {
+            opacity: 0;
+
+            max-width: 0;
+
+            white-space: nowrap;
+
+            transform: translateX(-8px);
+
+            transition:
+                opacity .25s ease,
+                max-width .45s ease,
+                transform .35s ease;
+        }
+
+
+        /* EFEITO AO PASSAR O MOUSE */
+
+        .menu-item:hover {
+            width: 160px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            box-shadow:
+                0 0 28px rgba(0, 229, 255, 0.22);
+        }
+
+
+        /* MOSTRA O TEXTO */
+
+        .menu-item:hover .menu-label {
+            opacity: 1;
+
+            max-width: 120px;
+
+            transform: translateX(0);
+        }
+
+
+        /* =========================
+           INFORMAÇÕES
+        ========================= */
+
+        .informacoes {
+            color: white;
+
+            margin-left: auto;
+
+            text-align: center;
+
+            padding-top: 5px;
+
+            padding-left: 100px;
+
+            transform: translateX(-20%);
+        }
+
+
+        /* =========================
+           REDES SOCIAIS
+        ========================= */
+
+        .redes {
+            display: flex;
+
+            flex-direction: row;
+
+            gap: 15px;
+
+            align-items: center;
+        }
+
+        .redes img {
+            display: block;
+
+            object-fit: cover;
+
+            height: 30px;
+            width: 30px;
+
+            transform: translateX(-30%);
+        }
+
+
+        /* =========================
+           QUADRADOS
+        ========================= */
+
+        .quadrado1,
+        .quadrado2,
+        .quadrado3 {
+            width: 100%;
+            height: 180px;
+        }
+
+
+        .quadrado1 a,
+        .quadrado2 a,
+        .quadrado3 a {
+            height: 100%;
+
+            background-image:
+                linear-gradient(
+                    #0F172A,
+                    #0F172A,
+                    #144185
+                );
+
+            opacity: 0.75;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 15px;
+
+            text-decoration: none;
+
+            flex-direction: column;
+        }
+
+
+        .quadrado1 p,
+        .quadrado2 p,
+        .quadrado3 p {
+            margin: 10px 0 0 0;
+
+            color: white;
+
+            font-size: 16px;
+        }
+
+
+        /* IMAGENS DOS QUADRADOS */
+
+        .quadrado1 img,
+        .quadrado2 img,
+        .quadrado3 img {
+            width: 120px;
+
+            height: auto;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .quadrado1:hover img,
+        .quadrado2:hover img,
+        .quadrado3:hover img {
+            transform: scale(1.10);
+        }
+
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        .conteudo {
+            grid-column: 1 / 4;
+
+            height: 700px;
+
+            background: #0F172A;
+
+            border-radius: 15px;
+        }
+
+
+        .inicio {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            height: 100%;
+
+            padding: 30px 80px;
+        }
+
+
+        .image-conteudo {
+            width: 50%;
+        }
+
+
+        .image-conteudo img {
+            width: 100%;
+
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .image-conteudo:hover img {
+            transform: scale(1.10);
+        }
+
+
+        .texto-conteudo {
+            width: 50%;
+
+            text-align: left;
+
+            transform: translateX(-2%);
+        }
+
+
+        .texto-conteudo h1 {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+
+            font-family:
+                'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
+            color: whitesmoke;
+        }
+
+
+        .texto-conteudo p {
+            font-size: 25px;
+
+            line-height: 1.6;
+
+            color: white;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        .rodape {
+            grid-column: 1 / 4;
+
+            height: 150px;
+
+            background: #0F172A;
+
+            margin-top: 50px;
+
+            border-radius: 15px;
+        }
+
+
+        .rodape p {
+            color: antiquewhite;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .estrutura_principal {
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr 1fr;
+
+                gap: 20px;
+
+                width: 95%;
+
+                margin: 20px auto;
+
+                padding: 15px;
+            }
+
+
+            /* CABEÇALHO */
+
+            .cabecalho {
+                height: 120px;
+            }
+
+
+            /* LOGO */
+
+            .logo {
+                width: 100px;
+
+                transform: translateX(0);
+            }
+
+
+            .logo img {
+                width: 90px;
+                height: 90px;
+            }
+
+
+            /* MENU */
+
+            .menu {
+                gap: 20px;
+
+                left: 50%;
+            }
+
+
+            .menu-item {
+                width: 42px;
+                height: 42px;
+                gap: 15px;
+
+                padding: 0 9px;
+            }
+
+
+            .menu-icon {
+                min-width: 22px;
+                width: 22px;
+
+                font-size: 17px;
+            }
+
+
+            .menu-item:hover {
+                width: 110px;
+            }
+
+
+            .menu-label {
+                font-size: 12px;
+            }
+
+
+            /* INFORMAÇÕES */
+
+            .informacoes {
+                display: none;
+            }
+
+
+            /* REDES */
+
+            .redes {
+                display: none;
+            }
+
+
+            /* QUADRADOS */
+
+            .quadrado1,
+            .quadrado2,
+            .quadrado3 {
+                height: 150px;
+            }
+
+
+            .quadrado1 img,
+            .quadrado2 img,
+            .quadrado3 img {
+                width: 80px;
+            }
+
+
+            .quadrado1 p,
+            .quadrado2 p,
+            .quadrado3 p {
+                font-size: 12px;
+
+                text-align: center;
+            }
+
+
+            /* CONTEÚDO */
+
+            .conteudo {
+                height: auto;
+
+                min-height: 700px;
+            }
+
+
+            .inicio {
+                flex-direction: column;
+
+                padding: 30px;
+
+                justify-content: center;
+            }
+
+
+            .image-conteudo {
+                width: 100%;
+            }
+
+
+            .image-conteudo img {
+                height: 300px;
+            }
+
+
+            .texto-conteudo {
+                width: 100%;
+
+                transform: translateX(0);
+            }
+
+
+            .texto-conteudo h1 {
+                font-size: 30px;
+            }
+
+
+            .texto-conteudo p {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
 
 </head>
-<style>
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-body{
-    background:#222c44;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.estrutura_principal{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:20px;
-    width:90%;
-    margin:30px auto;
-    padding:30px;
-    box-shadow: black;
-
-}
-
-
-.quadrado1 ,
-.quadrado2 ,
-.quadrado3 {
-    width: 100%;
-    height: 180px;
-
-}
-.quadrado1 a,
-.quadrado2 a,
-.quadrado3 a{
-    height: 100%;
-    background-image: linear-gradient(#0F172A, #0066FF,#0F172A);
-    opacity: 0.75;
-    display: flex;
-    justify-content: center; /* centraliza na horizontal */
-    align-items: center;
-    border-radius: 15px;
-    text-decoration: none;
-    flex-direction: column;
-}
-.quadrado1 p,
-.quadrado2 p,
-.quadrado3 p{
-    margin: 10px 0 0 0;
-    color: white;
-    font-size: 16px;
-}
-.quadrado1 img{
-    width: 120px;
-    height:auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-}
-
-
-.quadrado2 img{
-    width: 120px;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-
-}
-
-
-.quadrado3 img{
-    width: 120px;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.quadrado1:hover img,
-.quadrado2:hover img,
-.quadrado3:hover img{
-    transform: scale(1.10);
-}
-
-.conteudo{ grid-column: 1 / 4;
-     height: 700px; 
-     background: #0F172A;
-     border-radius: 15px;
-
-     } 
-.inicio{ display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 40px; 
-    height: 100%; 
-    padding: 30px 80px; } 
-
-.image-conteudo{ width: 50%;
- }
- .image-conteudo img{ width: 100%;
-     height: 400px; 
-     object-fit: cover; 
-     border-radius: 10px; }
-     .image-conteudo:hover img{
-        transform: scale(1.10)
-     }
-
- .texto-conteudo{ width: 50%;
-     text-align: left;
-      transform: translateX(-2%);
-     }
-  .texto-conteudo h1{ font-size: 45px;
-     margin-bottom: 20px; 
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     color: whitesmoke
-    }
-
-  .texto-conteudo p{ font-size: 25px;
-     line-height: 1.6;
-     color:white 
-    }
-     
-
-.cabecalho{
-    grid-column: 1 / 4;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    background:#0F172A;
-    border-radius: 10px;
-}
-.logo{
-    height: 110px;
-    width: 200px;
-    display: flex;
-    justify-content: center; /* centraliza na horizontal */
-    align-items: center;
-    overflow: hidden;
-    transform: translateX(30%);
-
-}
-.logo img{
-        display: block;
-        object-fit: cover;
-        height: 150px;
-        width: 150px;
-}
-.redes{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
-}
-.redes img{
-        display: block;
-        object-fit: cover;
-        height: 30px;
-        width: 30px;
-        transform: translateX(-30%)
-
-}
-.informacoes{
-      color: white;
-      margin-left: auto;
-      text-align: center;
-      padding-top: 5px;
-      padding-left: 100px;
-      transform: translateX(-20%);
-}
-
-  .rodape{
-      grid-column: 1 / 4;
-    height: 150px;
-    background: #0F172A;
-    margin-top: 50px;
-    border-radius: 15px;
-  }
-  .rodape p {
-    color: antiquewhite;
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 15px;
-
-
-  }
-  .menu{ 
-     display: flex;
-     justify-content: center;
-     align-items: center; 
-     gap: 40px;
-     padding: 15px; 
-     position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
-
-    } 
-
-  .menu a{ color: white;
-     text-decoration: none;
-      font-size: 17px; } 
-
-  .menu a:hover{ 
-    color: #60A5FA;
- }
-
-
- 
- @media(max-width:768px){
-    .estrutura_principal{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:20px;
-    width:85%;
-    margin:30px auto;
-    padding:30px;
-    box-shadow: black;
-
-}
-
-
-.quadrado1 ,
-.quadrado2 ,
-.quadrado3 {
-    width: 100%;
-    height: 180px;
-
-}
-.quadrado1 a,
-.quadrado2 a,
-.quadrado3 a{
-    height: 100%;
-    background:#0066FF;
-    opacity: 0.75;
-    display: flex;
-    justify-content: center; /* centraliza na horizontal */
-    align-items: center;
-    border-radius: 15px;
-    text-decoration: none;
-    flex-direction: column;
-}
-.quadrado1 p,
-.quadrado2 p,
-.quadrado3 p{
-    margin: 10px 0 0 0;
-    color: white;
-    font-size: 16px;
-}
-.quadrado1 img{
-    width: 120px;
-    height:auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-}
-
-
-.quadrado2 img{
-    width: 120px;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-
-}
-
-
-.quadrado3 img{
-    width: 120px;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.quadrado1:hover img,
-.quadrado2:hover img,
-.quadrado3:hover img{
-    transform: scale(1.10);
-}
-
-.conteudo{ grid-column: 1 / 4;
-     height: 700px; 
-     background: #0F172A;
-     border-radius: 15px;
-
-     } 
-.inicio{ display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 40px; 
-    height: 100%; 
-    padding: 30px 80px; } 
-
-.image-conteudo{ width: 50%;
- }
- .image-conteudo img{ width: 100%;
-     height: 400px; 
-     object-fit: cover; 
-     border-radius: 10px; }
-     .image-conteudo:hover img{
-        transform: scale(1.10)
-     }
-
- .texto-conteudo{ width: 50%;
-     text-align: left;
-      transform: translateX(-2%);
-     }
-  .texto-conteudo h1{ font-size: 45px;
-     margin-bottom: 20px; 
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     color: whitesmoke
-    }
-
-  .texto-conteudo p{ font-size: 25px;
-     line-height: 1.6;
-     color:white 
-    }
-     
-
-.cabecalho{
-    grid-column: 1 / 4;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    background:#0F172A;
-    border-radius: 10px;
-}
-.logo{
-    height: 110px;
-    width: 200px;
-    display: flex;
-    justify-content: center; /* centraliza na horizontal */
-    align-items: center;
-    overflow: hidden;
-    transform: translateX(30%);
-
-}
-.logo img{
-        display: block;
-        object-fit: cover;
-        height: 150px;
-        width: 150px;
-}
-.redes{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
-}
-.redes img{
-        display: block;
-        object-fit: cover;
-        height: 30px;
-        width: 30px;
-        transform: translateX(-30%)
-
-}
-.informacoes{
-      color: white;
-      margin-left: auto;
-      text-align: center;
-      padding-top: 5px;
-      padding-left: 100px;
-      transform: translateX(-20%);
-}
-
-  .rodape{
-      grid-column: 1 / 4;
-    height: 150px;
-    background: #0F172A;
-    margin-top: 50px;
-    border-radius: 15px;
-  }
-  .rodape p {
-    color: antiquewhite;
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 15px;
-
-
-  }
-  .menu{ 
-     display: flex;
-     justify-content: center;
-     align-items: center; 
-     gap: 40px;
-     padding: 15px; 
-     position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
-
-    } 
-
-  .menu a{ color: white;
-     text-decoration: none;
-      font-size: 17px; } 
-
-  .menu a:hover{ 
-    color: #60A5FA;
- }
-
- }
-
-           
-</style>
 
 <body>
+
     <div class="estrutura_principal">
-        
-    <div class="cabecalho">
 
-        <div class="logo">
-            <img src="imagens/logos.png" alt="Logo do site">
-        </div>
-        <div class="menu">
-         <a href="index.html">Início</a>
-          <a href="ia.html">I.A</a> 
-          <a href="desenvolvedor.html">Desenvolvedor</a>
-           <a href="seguranca.html">Segurança</a> </div>
 
-              <div class="informacoes">
-            <p style="font-size: 11px;">Tel:+55(67)99999-9999 </p>
-            <p style="font-size: 12px;">Local: Corumbá - MS</p>
+        <!-- =========================
+             CABEÇALHO
+        ========================= -->
+
+        <div class="cabecalho">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <img
+                    src="imagens/logos.png"
+                    alt="Logo do site">
+
+            </div>
+
+
+            <!-- MENU -->
+
+            <div class="menu">
+
+
+                <a
+                    href="index.html"
+                    class="menu-item">
+
+                    <span class="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
+
+                    <span class="menu-label">
+                        Início
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="ia.html"
+                    class="menu-item">
+
+                    <span class="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg></span>
+
+                    <span class="menu-label">
+                        I.A
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="desenvolvedor.html"
+                    class="menu-item">
+
+                    <span class="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-280 40-480l200-200 56 56-143 144 143 144-56 56Zm178 132-76-24 200-640 76 24-200 640Zm302-132-56-56 143-144-143-144 56-56 200 200-200 200Z"/></svg></span>
+
+                    <span class="menu-label">
+                        Desenvolvedor
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="seguranca.html"
+                    class="menu-item">
+
+                    <span class="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg></span>
+
+                    <span class="menu-label">
+                        Segurança
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="informacoes">
+
+                <p style="font-size: 11px;">
+                    Tel: +55 (67) 99999-9999
+                </p>
+
+                <p style="font-size: 12px;">
+                    Local: Corumbá - MS
+                </p>
+
+            </div>
+
+
+            <!-- REDES SOCIAIS -->
+
+            <div class="redes">
+
+                <img
+                    src="imagens/facebook-logo-.webp"
+                    alt="Facebook">
+
+                <img
+                    src="imagens/instagram-logo-instagram-icon-transparent-free-png.webp"
+                    alt="Instagram">
+
+                <img
+                    src="imagens/whatsapp.png"
+                    alt="WhatsApp">
+
+            </div>
+
+
         </div>
 
-        <div class="redes">
-            <img src="imagens/facebook-logo-.webp" alt="Facebook">
-            <img src="imagens/instagram-logo-instagram-icon-transparent-free-png.webp" alt="Imagem 2">
-            <img src="imagens/whatsapp.png" alt="Imagem 3">
+
+        <!-- =========================
+             QUADRADO 1
+        ========================= -->
+
+        <div class="quadrado1">
+
+            <a href="ia.html">
+
+                <img
+                    src="imagens/ia quadro.png"
+                    alt="Inteligência Artificial">
+
+
+            </a>
+
         </div>
-        
+
+
+        <!-- =========================
+             QUADRADO 2
+        ========================= -->
+
+        <div class="quadrado2">
+
+            <a href="desenvolvedor.html">
+
+                <img
+                    src="imagens/developer quadro.png"
+                    alt="Desenvolvedor">
+
+                <p>
+                    Profissão Desenvolvedor
+                </p>
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             QUADRADO 3
+        ========================= -->
+
+        <div class="quadrado3">
+
+            <a href="seguranca.html">
+
+                <img
+                    src="imagens/seguranca quadro.png"
+                    alt="Segurança da Informação">
+
+                <p>
+                    Segurança da Informação
+                </p>
+
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             CONTEÚDO
+        ========================= -->
+
+        <div class="conteudo">
+
+            <div class="inicio">
+
+
+                <div class="image-conteudo">
+
+                    <img
+                        src="imagens/IA-removebg-preview.png"
+                        alt="Inteligência Artificial">
+
+                </div>
+
+
+                <div class="texto-conteudo">
+
+                    <h1>
+                        Sua porta de entrada para o mundo da tecnologia
+                    </h1>
+
+                    <p>
+                        Descubra tudo sobre Inteligência Artificial,
+                        a carreira de desenvolvedor e segurança da
+                        informação. Conteúdo prático, direto ao ponto,
+                        para quem quer aprender e crescer na área.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RODAPÉ
+        ========================= -->
+
+        <div class="rodape">
+
+            <p>
+                Sys Flux
+            </p>
+
+            <p>
+                Corumbá - MS
+            </p>
+
+            <p>
+                contato@sysflux.com
+            </p>
+
+            <p>
+                (67) 99999-9999
+            </p>
+
+        </div>
 
 
     </div>
-    
-
-    <div class="quadrado1">
-    <a href="ia.html">
-       <img src="imagens/ia quadro.png" alt="Imagem 1">
-       <p>Inteligência Artificial</p>
-    </a>
-</div>
-
-<div class="quadrado2">
-    <a href="desenvolvedor.html">
-    <img src="imagens/developer quadro.png" alt="Imagem 2">
-    <p>Profissão Desenvolvedor</p>
-</a>
-</div>
-
-<div class="quadrado3">
-    <a href="seguranca.html">
-    <img src="imagens/seguranca quadro.png" alt="Imagem 3">
-    <p>Segurança da Informação</p>
-</a>
-</div>
-
-    <div class="conteudo">
-        <div class="inicio">
-            <div class="image-conteudo">
-             <img src="imagens/IA-removebg-preview.png" alt="Imagem 3">
-           </div>
-           <div class="texto-conteudo">
-            <h1>Sua porta de entrada para o mundo da tecnologia</h1>
-            <p>Descubra tudo sobre Inteligência Artificial, a carreira de desenvolvedor e segurança da informação.
-                 Conteúdo prático, direto ao ponto, para quem quer aprender e crescer na área.</p></div>
-        </div>
-    </div>
-    
-       
-<div class="rodape">   
-
-        <p>Sys Flux</p>
-
-        <p>Corumbá - MS</p>
-
-        <p>contato@sysflux.com</p>
-
-        <p>(67) 99999-9999</p>
-
-
-</div>
-
-</div>
 
 </body>
 

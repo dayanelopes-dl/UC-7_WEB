@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vídeo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* CABEÇALHO */
+        header {
+            width: 60% !important;
+            height: 80px !important;
+            margin: 20px auto 10px !important;
+
+            border: 1px solid #000 !important;
+
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            background-color: white !important;
+        }
+
+        header h1 {
+            font-size: 28px !important;
+        }
+
+        /* CONTAINER DO VÍDEO */
+        .container-video {
+            width: 60% !important;
+            aspect-ratio: 16 / 9 !important;
+
+            margin: 0 auto !important;
+
+            overflow: hidden !important;
+
+            border: 1px solid #000 !important;
+
+            background-color: black !important;
+        }
+
+        /* VÍDEO */
+        .container-video video {
+            width: 100% !important;
+            height: 100% !important;
+
+            display: block !important;
+
+            object-fit: contain !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Cabeçalho</h1>
+    </header>
+
+    <div class="container-video">
+
+        <video autoplay muted loop playsinline>
+            <source src="video/projeto Burgking.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+
+    </div>
+
+</body>
+
+</html>
